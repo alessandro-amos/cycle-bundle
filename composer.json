@@ -1,5 +1,5 @@
 {
-  "name": "alms/cycle-bundle",
+  "name": "alessandro-amos/cycle-bundle",
   "type": "symfony-bundle",
   "license": "MIT",
   "keywords": [
@@ -29,18 +29,18 @@
   "minimum-stability": "stable",
   "require": {
     "php": ">=8.1",
-    "cycle/annotated": "^3.4",
-    "cycle/entity-behavior": "^1.2",
-    "cycle/orm": "^2.5",
+    "cycle/annotated": "^4.1",
+    "cycle/entity-behavior": "^1.3",
+    "cycle/orm": "^2.8",
     "cycle/schema-migrations-generator": "^2.2",
     "cycle/schema-renderer": "^1.2",
-    "symfony/cache": "^5.4 || ^6.0 || ^7.0",
-    "symfony/config": "^5.4 || ^6.0 || ^7.0",
-    "symfony/console": "^5.4 || ^6.0 || ^7.0",
-    "symfony/dependency-injection": "^5.4 || ^6.0 || ^7.0",
-    "symfony/deprecation-contracts": "^2.1 || ^3",
-    "symfony/framework-bundle": "^5.4 || ^6.0 || ^7.0",
-    "symfony/service-contracts": "^1.1.1 || ^2.0 || ^3"
+    "symfony/cache": "^7.0",
+    "symfony/config": "^7.0",
+    "symfony/console": "^7.0",
+    "symfony/dependency-injection": "^7.0",
+    "symfony/deprecation-contracts": "^3.5",
+    "symfony/framework-bundle": "^7.0",
+    "symfony/service-contracts": "^3.5"
   },
   "suggest": {
     "ext-pdo": "*",
@@ -53,8 +53,5 @@
       "symfony/flex": true
     },
     "sort-packages": true
-  },
-  "require-dev": {
-    "symfony/security-bundle": "^7.0"
   }
 }
