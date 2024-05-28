@@ -16,6 +16,8 @@ namespace Alms\Bundle\CycleBundle\Schema\Loader;
 use Alms\Bundle\CycleBundle\Schema\GeneratorCollection;
 use Cycle\Annotated\Embeddings;
 use Cycle\Annotated\Entities;
+use Cycle\Annotated\Locator\TokenizerEmbeddingLocator;
+use Cycle\Annotated\Locator\TokenizerEntityLocator;
 use Spiral\Tokenizer\ClassLocator;
 use Symfony\Component\Config\Loader\FileLoader;
 use Symfony\Component\Config\Resource\DirectoryResource;
@@ -33,9 +35,11 @@ class AnnotationLoader extends FileLoader
         $path = $this->locator->locate($resource);
         $finder = (new Finder())->files()->in([$path]);
         $classLocator = new ClassLocator($finder);
+
         $generators = new GeneratorCollection();
-        $generators->add(new Embeddings($classLocator));
-        $generators->add(new Entities($classLocator));
+
+        $generators->add(new Embeddings(new TokenizerEmbeddingLocator($classLocator)));
+        $generators->add(new Entities(new TokenizerEntityLocator($classLocator)));
         $generators->addResource(new DirectoryResource($path));
 
         return $generators;
