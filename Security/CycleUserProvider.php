@@ -2,6 +2,7 @@
 
 namespace Alms\Bundle\CycleBundle\Security;
 
+use Cycle\ORM\EntityProxyInterface;
 use Cycle\ORM\ORMInterface;
 use Cycle\ORM\RepositoryInterface;
 use Cycle\ORM\SchemaInterface;
@@ -83,5 +84,4 @@ class CycleUserProvider implements UserProviderInterface
     {
         return $this->orm->getRepository($this->class);
     }
-
 }
