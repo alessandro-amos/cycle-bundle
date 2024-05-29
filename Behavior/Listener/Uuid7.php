@@ -19,7 +19,7 @@ final class Uuid7
     public function __invoke(OnCreate $event): void
     {
         if (!$this->nullable && !isset($event->state->getData()[$this->field])) {
-            $event->state->register($this->field, Uuid::v7());
+            $event->state->register($this->field, Uuid::v7()->toRfc4122());
         }
     }
 }
